@@ -46,7 +46,7 @@ getMember()
   })
 ```
 
-## Nullアサーション演算子(Non-Null Assertion Operator)
+## 非nullアサーション演算子(Non-Null Assertion Operator)
 
 新しい`!`ポストフィックス式演算子を使用して、型チェッカーが結論付けられないコンテキストにおいて、そのオペランドが非nullでかつ非undefinedであることをアサートすることができます。例えば：
 
@@ -63,7 +63,7 @@ function processEntity(e?: Entity) {
 }
 ```
 
-> これは単なるアサーションであり、型アサーションと同じように、あなたは値がnullでないことを確認する責任があることに注意してください。非nullアサーションは、本質的にはｍコンパイラに"それはnullでないことが分かっているから、nullではないものとして使います"と伝えるものです。
+> これは単なるアサーションであり、型アサーションと同じように、あなたは値がnullでないことを確認する責任があることに注意してください。非nullアサーションは、本質的にはコンパイラに"それはnullでないことが分かっているから、nullではないものとして使います"と伝えるものです。
 
 ### Definite Assignment Assertion演算子(Definite Assignment Assertion Operator)
 
