@@ -33,7 +33,7 @@ catch (err) {
 }
 ```
 
-このシンプルな`loadJSONSync`には有効な戻り値、ファイルシステムラー、JSON.parseエラーの３種類の動作があります。私たちは、他の言語で同期処理を行う際に慣れていたように、単純なtry/catchでエラーを処理します。このような関数の良い非同期バージョンを作ってみましょう。最初の適切な試みとして、些細なエラーチェックロジックを組み込んだ例は次のようになります：
+このシンプルな`loadJSONSync`には有効な戻り値、ファイルシステムエラー、JSON.parseエラーの３種類の動作があります。私たちは、他の言語で同期処理を行う際に慣れていたように、単純なtry/catchでエラーを処理します。このような関数の良い非同期バージョンを作ってみましょう。最初の適切な試みとして、些細なエラーチェックロジックを組み込んだ例は次のようになります：
 
 ```ts
 import fs = require('fs');
@@ -172,7 +172,7 @@ function loadJSON(filename: string, cb: (error: Error) => void) {
 
 ## Promiseを作る
 
-Promiseの状態は、`pending`(保留中)または`fulfilled`(履行済み)または`regected`(拒絶済み)のいずれかになります。
+Promiseの状態は、`pending`(保留中)または`fulfilled`(履行済み)または`rejected`(拒絶済み)のいずれかになります。
 
 ![Promiseの宣言と運命](https://raw.githubusercontent.com/basarat/typescript-book/master/images/promise%20states%20and%20fates.png)
 
@@ -495,7 +495,7 @@ Promise.race([task1, task2]).then(function(value) {
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 ```
 
-NodeJSにはこれを行う素晴らしく便利な関数があります。これは`ノードスタイルの関数 => Promiseを返す関数`という魔法をかけてくれます。
+NodeJSにはこれを行う素晴らしく便利な関数があります。これは`Nodeスタイルの関数 => Promiseを返す関数`という魔法をかけてくれます。
 
 ```ts
 /** Sample usage */
